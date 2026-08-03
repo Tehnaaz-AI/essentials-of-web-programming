@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial;
+            height: 1200px;
+        }
+
+        .static {
+            position: static;
+            border: 2px solid green;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .relative {
+            position: relative;
+            left: 30px;
+            border: 2px solid blue;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .parent {
+            position: relative;
+            width: 300px;
+            height: 120px;
+            border: 2px solid black;
+            margin: 10px;
+        }
+
+        .absolute {
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            background: yellow;
+            padding: 5px;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 0;
+            background: rgb(224, 23, 57);
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 20px;
+            color: white;
+        }
+
+        .fixed {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: purple;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+    title>Positions</title>
+</head>
+
+<body>
+
+    <h2>CSS Positions</h2>
+
+    <div class="static">
+        <b>Static:</b> Default position.
+    </div>
+
+    <div class="relative">
+        <b>Relative:</b> Shifted 30px to the right.
+    </div>
+
+    <div class="parent">
+        Parent Element
+        <div class="absolute">
+            Absolute Position
+        </div>
+    </div>
+
+    <div class="sticky">
+        Sticky Position (Scroll Down)
+    </div>
+
+    <p>
+        Scroll this page to observe the <b>Sticky</b> and <b>Fixed</b> elements.
+    </p>
+
+    <div class="fixed">
+        Fixed Position
+    </div>
+
+    <p style="height:900px;">
+        This extra space allows scrolling so that the Sticky and Fixed positions can be observed clearly.
+    </p>
+
+</body>
+
+</html>

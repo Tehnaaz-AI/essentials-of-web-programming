@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Array Example</title>
+</head>
+
+<body style="font-family:'Courier New', Courier, monospace; font-size:30px; background-color:rgb(186,186,252);">
+
+    <div style="text-align:center; border:2px solid yellow; padding:20px; background-color:#f170b7; border-radius:10px; margin:50px;">
+
+        <h2 style="color:red;">Employee List</h2>
+
+        <!-- Display Array on Webpage -->
+        <p id="emp" style="color:darkblue; font-weight:bold;"></p>
+
+        <br>
+
+        <!-- Alert Button -->
+        <button style="color:blueviolet;" onclick="showEmployees()">
+            Show Employees In Alert Box
+        </button>
+
+        <!-- Console Button -->
+        <button style="color:blueviolet;" onclick="showConsole()">
+            Show Employees In Console
+        </button>
+
+    </div>
+
+    <script>
+        // Employee Array
+        const employees = ["Rahul", "Priya", "Amit", "Sneha", "Kiran"];
+
+        // Display employees on webpage
+        document.getElementById("emp").innerHTML =
+            "<b>Employees:</b> " + employees.join(", ");
+
+        // Show employees in alert box
+        function showEmployees() {
+            alert("Employees:\n" + employees.join("\n"));
+        }
+
+        // Show employees in console
+        function showConsole() {
+            console.log("Employee Names:");
+            for (let i = 0; i < employees.length; i++) {
+                console.log(employees[i]);
+            }
+        }
+    </script>
+
+</body>
+</html>
