@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alert Example</title>
+</head>
+
+<body style="font-family:Courier New; font-size:30px; text-align:center; background-color:lightpink;">
+
+<h2>Employee Alert</h2>
+
+<button onclick="showEmployees()">
+Show Employees
+</button>
+
+<br><br>
+
+<button onclick="location.href='index.html'">
+Home
+</button>
+
+<script>
+
+const employees=["Rahul","Priya","Amit","Sneha","Kiran"];
+
+function showEmployees(){
+    alert("Employees:\n"+employees.join("\n"));
+}
+
+</script>
+
+</body>
+</html>

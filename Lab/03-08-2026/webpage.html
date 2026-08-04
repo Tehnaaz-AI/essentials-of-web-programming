@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Employees</title>
+</head>
+
+<body style="font-family:Courier New; font-size:30px; text-align:center; background-color:rgb(186,186,252);">
+
+<h2>Employee List</h2>
+
+<p id="emp"></p>
+
+<br>
+
+<button onclick="location.href='index.html'">
+    Home
+</button>
+
+<script>
+
+const employees=["Rahul","Priya","Amit","Sneha","Kiran"];
+
+document.getElementById("emp").innerHTML=
+"<b>Employees:</b> "+employees.join(", ");
+
+</script>
+
+</body>
+</html>

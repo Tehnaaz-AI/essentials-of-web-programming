@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Console Example</title>
+</head>
+
+<body style="font-family:Courier New; font-size:30px; text-align:center; background-color:lightgreen;">
+
+<h2>Console Output</h2>
+
+<button onclick="showConsole()">
+Show Employees
+</button>
+
+<br><br>
+
+<button onclick="location.href='index.html'">
+Home
+</button>
+
+<script>
+
+const employees=["Rahul","Priya","Amit","Sneha","Kiran"];
+
+function showConsole(){
+
+    console.clear();
+
+    console.log("Employee Names");
+
+    for(let i=0;i<employees.length;i++)
+    {
+        console.log(employees[i]);
+    }
+}
+
+</script>
+
+</body>
+</html>
