@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Examination Portal</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+
+        .container {
+            width: 600px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        nav {
+            background-color: darkblue;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        input:focus {
+            border: 2px solid blue;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Exam</a>
+        <a href="#">Results</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>Online Examination Portal</h1>
+
+        <h3>Student Details</h3>
+
+        <label>Student Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <h3>Question 1</h3>
+        <p>What is the capital of India?</p>
+
+        <input type="radio" name="q1" value="Delhi"> Delhi
+        <input type="radio" name="q1" value="Mumbai"> Mumbai
+        <input type="radio" name="q1" value="Chennai"> Chennai
+
+        <h3>Question 2</h3>
+        <p>Which language is used for web page structure?</p>
+
+        <input type="radio" name="q2" value="HTML"> HTML
+        <input type="radio" name="q2" value="Python"> Python
+        <input type="radio" name="q2" value="Java"> Java
+
+        <br><br>
+
+        <button onclick="calculateScore()">Submit Exam</button>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script>
+        function calculateScore() {
+
+            let name = document.getElementById("name").value;
+
+            if (name == "") {
+                alert("Please enter your name");
+                return;
+            }
+
+            let score = 0;
+
+            let q1 = document.querySelector('input[name="q1"]:checked');
+            let q2 = document.querySelector('input[name="q2"]:checked');
+
+            if (q1 && q1.value == "Delhi") {
+                score++;
+            }
+
+            if (q2 && q2.value == "HTML") {
+                score++;
+            }
+
+            document.getElementById("result").innerHTML =
+                "Hello " + name + "! Your score is " + score + " / 2";
+        }
+    </script>
+
+</body>
+</html>

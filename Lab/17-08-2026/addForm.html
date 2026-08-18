@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Online Admission Form</title> 
+        <style> 
+            body { 
+                font-family: Arial, sans-serif; background-color: #f2f2f2; } 
+            .form-box { 
+            width: 400px; margin: 40px auto; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 0 10px gray; } 
+            h2 { text-align: center; } 
+            label { display: block; margin-top: 10px; } 
+            input, select { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+            .gender { width: auto; } 
+            button { width: 100%; padding: 10px; margin-top: 20px; background-color: blue; color: white; border: none; cursor: pointer; } 
+            button:hover { background-color: darkblue; } 
+        </style> 
+        </head> 
+            <body> 
+                <div class="form-box"> 
+                    <h2>Online Admission Form</h2> 
+                    <form> 
+                        <label>Student Name:</label> 
+                        <input type="text" name="name" required> 
+                        <label>Gender:</label> 
+                        <input type="radio" name="gender" value="Male" class="gender"> Male 
+                        <input type="radio" name="gender" value="Female" class="gender"> Female 
+                        <label>Course Selection:</label> 
+                        <select name="course"> 
+                            <option>B.Tech</option> 
+                            <option>B.Sc</option> 
+                            <option>B.Com</option> 
+                            <option>BBA</option> 
+                        </select> 
+                        <button type="submit">Submit</button> 
+                    </form> 
+                </div> 
+            </body> 
+        </html>
+
