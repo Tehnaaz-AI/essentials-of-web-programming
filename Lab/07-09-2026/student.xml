@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <studentId>101</studentId>
+        <name>Tina</name>
+        <age>20</age>
+        <course>BCA</course>
+        <email>Tina@example.com</email>
+    </student>
+</students>

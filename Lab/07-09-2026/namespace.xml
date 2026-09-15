@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<university
+    xmlns:s="https://www.geethanjaliinstitutions.com"
+    xmlns:c="https://www.anurag.edu.in">
+
+    <s:student>
+        <s:name>Rahul</s:name>
+        <s:department>Artificial Intelligence</s:department>
+    </s:student>
+
+    <c:college>
+        <c:name>Anurag University</c:name>
+        <c:department>AI Department</c:department>
+    </c:college>
+
+</university>
