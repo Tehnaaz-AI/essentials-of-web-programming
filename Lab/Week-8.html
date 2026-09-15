@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+            color: #1e293b;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header p {
+            margin: 6px 0 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 25px auto;
+            padding: 0 20px;
+        }
+
+        .panel {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #0002;
+        }
+
+        .menu {
+            height: 560px;
+            overflow-y: auto;
+            padding-right: 8px;
+        }
+
+        .menu h2 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .function {
+            padding: 13px;
+            margin-bottom: 8px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #f8fafc;
+            transition: .2s;
+        }
+
+        .function:hover {
+            background: #e0e7ff;
+            transform: translateX(3px);
+        }
+
+        .function.active {
+            background: #4f46e5;
+            color: white;
+            border-color: #4f46e5;
+        }
+
+        .number {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .content {
+            min-width: 0;
+        }
+
+        .content h2 {
+            margin-top: 0;
+            color: #4f46e5;
+        }
+
+        .box-title {
+            font-weight: bold;
+            margin: 18px 0 8px;
+        }
+
+        pre {
+            margin: 0;
+            background: #111827;
+            color: #a7f3d0;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            min-height: 180px;
+            font-family: Consolas, monospace;
+            line-height: 1.5;
+        }
+
+        .output {
+            background: #0f172a;
+            color: #22c55e;
+            padding: 18px;
+            border-radius: 10px;
+            min-height: 80px;
+            font-family: Consolas, monospace;
+            white-space: pre-line;
+        }
+
+        .run {
+            margin-top: 15px;
+            padding: 10px 25px;
+            border: 0;
+            border-radius: 7px;
+            background: #4f46e5;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .run:hover {
+            background: #3730a3;
+        }
+
+        @media (max-width: 700px) {
+            .panel {
+                grid-template-columns: 1fr;
+            }
+
+            .menu {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Functions</h1>
+    <p>Interactive Function Demonstration</p>
+</header>
+
+<div class="container">
+
+    <div class="panel">
+
+        <div class="menu">
+            <h2>Functions</h2>
+
+            <div class="function active" onclick="select(0)">1. Function Declaration</div>
+            <div class="function" onclick="select(1)">2. Function Expression</div>
+            <div class="function" onclick="select(2)">3. Arrow Function</div>
+            <div class="function" onclick="select(3)">4. Parameters & Return</div>
+            <div class="function" onclick="select(4)">5. Default Parameter</div>
+            <div class="function" onclick="select(5)">6. Rest Parameter</div>
+            <div class="function" onclick="select(6)">7. Callback Function</div>
+            <div class="function" onclick="select(7)">8. Higher-Order Function</div>
+            <div class="function" onclick="select(8)">9. Recursive Function</div>
+            <div class="function" onclick="select(9)">10. Closure</div>
+            <div class="function" onclick="select(10)">11. Object Method</div>
+            <div class="function" onclick="select(11)">12. Async Function</div>
+            <div class="function" onclick="select(12)">13. IIFE</div>
+            <div class="function" onclick="select(13)">14. Generator Function</div>
+            <div class="function" onclick="select(14)">15. Anonymous Function</div>
+        </div>
+
+        <div class="content">
+
+            <h2 id="title">Function Declaration</h2>
+
+            <div class="box-title">Code</div>
+            <pre id="code"></pre>
+
+            <button class="run" onclick="runFunction()">▶ Run Function</button>
+
+            <div class="box-title">Output</div>
+            <div class="output" id="output">
+                Select a function to run it.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const functions = [
+
+    {
+        title: "Function Declaration",
+        code: `function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+greet("Boss");`,
+        run: () => "Hello, Boss!"
+    },
+
+    {
+        title: "Function Expression",
+        code: `const add = function(a, b) {
+    return a + b;
+};
+
+add(10, 20);`,
+        run: () => 30
+    },
+
+    {
+        title: "Arrow Function",
+        code: `const square = n => n * n;
+
+square(6);`,
+        run: () => 36
+    },
+
+    {
+        title: "Parameters and Return",
+        code: `function multiply(a, b) {
+    return a * b;
+}
+
+multiply(7, 8);`,
+        run: () => 56
+    },
+
+    {
+        title: "Default Parameter",
+        code: `function welcome(name = "Guest") {
+    return "Welcome, " + name;
+}
+
+welcome();`,
+        run: () => "Welcome, Guest"
+    },
+
+    {
+        title: "Rest Parameter",
+        code: `function total(...numbers) {
+    return numbers.reduce((a, b) => a + b, 0);
+}
+
+total(10, 20, 30, 40);`,
+        run: () => 100
+    },
+
+    {
+        title: "Callback Function",
+        code: `function processUser(name, callback) {
+    callback("User: " + name);
+}
+
+processUser("Alex", message => {
+    return message;
+});`,
+        run: () => "User: Alex"
+    },
+
+    {
+        title: "Higher-Order Function",
+        code: `function calculate(a, b, operation) {
+    return operation(a, b);
+}
+
+calculate(10, 5, (a, b) => a - b);`,
+        run: () => calculate(10, 5, (a, b) => a - b)
+    },
+
+    {
+        title: "Recursive Function",
+        code: `function factorial(n) {
+    return n <= 1 ? 1 : n * factorial(n - 1);
+}
+
+factorial(5);`,
+        run: () => factorial(5)
+    },
+
+    {
+        title: "Closure",
+        code: `function counter() {
+    let count = 0;
+
+    return () => ++count;
+}
+
+const c = counter();
+c();`,
+        run: (() => {
+            let count = 0;
+            return () => ++count;
+        })()
+    },
+
+    {
+        title: "Object Method",
+        code: `const person = {
+    name: "Alex",
+    age: 21,
+
+    introduce() {
+        return this.name + " is " + this.age;
+    }
+};
+
+person.introduce();`,
+        run: () => "Alex is 21"
+    },
+
+    {
+        title: "Async Function",
+        code: `async function getData() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Data received!");
+        }, 1000);
+    });
+}
+
+getData();`,
+        run: async () => {
+            showOutput("Fetching data...");
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            return "Data received!";
+        }
+    },
+
+    {
+        title: "IIFE",
+        code: `(function() {
+    return "IIFE executed!";
+})();`,
+        run: () => "IIFE executed!"
+    },
+
+    {
+        title: "Generator Function",
+        code: `function* numbers() {
+    yield 10;
+    yield 20;
+    yield 30;
+}
+
+[...numbers()];`,
+        run: () => [10, 20, 30].join("\n")
+    },
+
+    {
+        title: "Anonymous Function",
+        code: `const message = function() {
+    return "Anonymous function!";
+};
+
+message();`,
+        run: () => "Anonymous function!"
+    }
+
+];
+
+let current = 0;
+
+function select(index) {
+    current = index;
+
+    document.querySelectorAll(".function")
+        .forEach((item, i) => {
+            item.classList.toggle("active", i === index);
+        });
+
+    document.getElementById("title").textContent = functions[index].title;
+    document.getElementById("code").textContent = functions[index].code;
+
+    runFunction();
+}
+
+async function runFunction() {
+    let result = await functions[current].run();
+    showOutput(result);
+}
+
+function showOutput(value) {
+    document.getElementById("output").textContent = value;
+}
+
+function factorial(n) {
+    return n <= 1 ? 1 : n * factorial(n - 1);
+}
+
+function calculate(a, b, operation) {
+    return operation(a, b);
+}
+
+select(0);
+
+</script>
+
+</body>
+</html>
